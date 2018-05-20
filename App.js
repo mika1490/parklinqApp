@@ -13,20 +13,14 @@ import {
 } from 'react-native';
 
 import Splash from './app/screens/Splash';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import Login from './app/components/Login/Home';
 
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-         <Splash />
+         <Login />
       </View>
     );
   }
