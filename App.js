@@ -16,11 +16,12 @@ import Splash from './app/screens/Splash';
 import LoginHome from './app/screens/Login/LoginHome';
 import Login from './app/screens/Login/Login';
 import Registration from './app/screens/Login/Registration';
+import MainMap from './app/screens/MainMap';
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-         <Registration />
+         <MainMap />
       </View>
     );
   }
