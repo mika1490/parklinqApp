@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-export default class Login  extends Component {
+export default class LoginHome  extends Component {
   constructor(props) {
     super(props);
 
@@ -16,10 +16,14 @@ export default class Login  extends Component {
           style={styles.logo}
           source={require('../../../assets/ParkLinq_Logo.png')} />
 
-          <TouchableOpacity style={styles.buttonSignUp}>
+          <TouchableOpacity 
+            style={styles.buttonSignUp}
+            onPress={() => this.props.navigation.navigate(`Registration`)}>
           <Text style={{ color: '#39c1ef' }}>Create an Account</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonSignIn}>
+          <TouchableOpacity
+            style={styles.buttonSignIn}
+            onPress={() => this.props.navigation.navigate(`Login`)}>
           <Text style={{ color: 'white' }}>Log In</Text>
         </TouchableOpacity>
       </View>
