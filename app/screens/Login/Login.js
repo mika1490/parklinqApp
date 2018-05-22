@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
-
+import {
+   View,
+   Text,
+   StyleSheet, 
+   TextInput, 
+   TouchableOpacity } from 'react-native';
 
 export default class Login  extends Component {
   
   render() {
     return (
-      
       <View style={styles.container}>
         <TouchableOpacity 
           style={styles.socialLogin}>
@@ -16,36 +19,35 @@ export default class Login  extends Component {
           style={styles.socialLogin}>
           <Text style={{ color: '#39c1ef', fontSize: 18 }}>Log in with Facebook</Text>
         </TouchableOpacity>
-        <Text style={styles.textRegister}> ───────  Or  ───────</Text>
-        
-          <View style={styles.inputSection}>
-            <TextInput
-              underlineColorAndroid='transparent'
-              placeholder='Email address'
-              placeholderTextColor='white'
-              returnKeyType='next'
-              onSubmitEditing={() => this.passwordInput.focus()}
-              keyboardType="email-address"
-              autoCorrect={false}
-              autoCapitalize={'none'}
-              style={styles.input} />
-          </View>
-          <View style={styles.inputSection}>
+        <Text style={styles.textRegister}> ───────  Or  ───────</Text>  
+        <View style={styles.inputSection}>
           <TextInput
             underlineColorAndroid='transparent'
-            placeholder='Password'
-            returnKeyType="go"
+            placeholder='Email address'
             placeholderTextColor='white'
-            style={styles.input}
-            secureTextEntry={true}
-            ref={(input) => this.passwordInput = input} />
-          </View>
-          <TouchableOpacity style={styles.button}>
-            <Text style={{ color: '#39c1ef', fontSize: 18 }}>Login</Text>
-          </TouchableOpacity>
-        
+            returnKeyType='next'
+            onSubmitEditing={() => this.passwordInput.focus()}
+            keyboardType="email-address"
+            autoCorrect={false}
+            autoCapitalize={'none'}
+            style={styles.input} />
+        </View>
+        <View style={styles.inputSection}>
+        <TextInput
+          underlineColorAndroid='transparent'
+          placeholder='Password'
+          returnKeyType="go"
+          placeholderTextColor='white'
+          style={styles.input}
+          secureTextEntry={true}
+          ref={(input) => this.passwordInput = input} />
+        </View>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.props.navigation.navigate('Home')}>
+          <Text style={{ color: '#39c1ef', fontSize: 18 }}>Login</Text>
+        </TouchableOpacity>
       </View>
-      
     );
   }
 }

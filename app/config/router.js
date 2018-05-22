@@ -35,6 +35,12 @@ export const LoginStackNav = StackNavigator({
     navigationOptions: {
       title: 'Terms & Conditions'
     }
+  },
+  Home: {
+    screen: MainMap,
+    navigationOptions: {
+      header: null
+    }
   }
 }) 
 
