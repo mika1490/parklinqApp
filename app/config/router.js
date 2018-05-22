@@ -1,27 +1,42 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { TabNavigator, DrawerNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import MainMap from '../screens/MainMap';
 import Account from '../screens/Account';
 import PassesPage from '../screens/Passes';
+import LoginHome from '../screens/Login/LoginHome';
+import Login from '../screens/Login/Login';
+import Registration from '../screens/Login/Registration';
+import Terms from '../screens/Login/TermsConditions';
 
-class OpenDrawer extends Component {
-  componentWillMount() {
-    this.props.navigation.navigate("DrawerOpen");
+export const LoginStackNav = StackNavigator({
+  LoginHome: {
+    screen: LoginHome, 
+    navigationOptions: {
+      header: null
+    }
+  },
+  Login: {
+    screen: Login, 
+    navigationOptions: {
+      header: null
+    }
+  },
+  Registration: {
+    screen: Registration, 
+    navigationOptions: {
+      header: null
+    }
+  },
+  Terms: {
+    screen: Terms,
+    navigationOptions: {
+      title: 'Terms & Conditions'
+    }
   }
-
-  render() {
-    return(
-      <View>
-        <Text>dummy view</Text>
-      </View>
-    )
-  }
-}
-
-
+}) 
 
  export const Tabs = TabNavigator({
   Home: {
@@ -49,13 +64,3 @@ class OpenDrawer extends Component {
   tabBarPosition: 'bottom'
 });
 
-export const DrawerNav = DrawerNavigator({
-  Home: {
-    screen: MainMap,
-    navigationOptions: {
-      drawer: {
-        label: 'Drawer 2'
-      },
-    },
-  },
-});

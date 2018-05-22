@@ -38,7 +38,10 @@ export default class Registration  extends Component {
           </TouchableOpacity>
           <View style={styles.terms}>
             <Text style={{color: 'white'}}>By creating an account. you agree to Parklinq's </Text>
-            <TouchableOpacity><Text style={{color: 'white', textDecorationLine: 'underline'}}>Terms & Conditions.</Text></TouchableOpacity>
+            <TouchableOpacity 
+              onPress={() => this.props.navigation.navigate('Terms')}>
+              <Text style={{color: 'white', textDecorationLine: 'underline'}}>Terms & Conditions.</Text>
+              </TouchableOpacity>
           </View>
       </View>
     );

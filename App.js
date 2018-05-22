@@ -9,7 +9,9 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Keyboard,
+  TouchableWithoutFeedback
 } from 'react-native';
 
 import Splash from './app/screens/Splash';
@@ -17,14 +19,23 @@ import LoginHome from './app/screens/Login/LoginHome';
 import Login from './app/screens/Login/Login';
 import Registration from './app/screens/Login/Registration';
 import MainMap from './app/screens/MainMap';
-import { DrawerNav, Tabs } from './app/config/router';
+import { DrawerNav, Tabs, LoginStackNav } from './app/config/router';
+
+
+const DismissKeyboard = ({ children }) =>( 
+  <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+  {children}
+  </TouchableWithoutFeedback>
+)
 export default class App extends Component {
+
   render() {
     return (
+      <DismissKeyboard>
       <View style={styles.container}>
-         <Tabs />
-         
+         <LoginStackNav />
       </View>
+      </DismissKeyboard>
     );
   }
 }

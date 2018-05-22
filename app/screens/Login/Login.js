@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
+
 export default class Login  extends Component {
   
   render() {
     return (
+      
       <View style={styles.container}>
         <TouchableOpacity 
           style={styles.socialLogin}>
@@ -21,6 +23,9 @@ export default class Login  extends Component {
               underlineColorAndroid='transparent'
               placeholder='Email address'
               placeholderTextColor='white'
+              returnKeyType='next'
+              onSubmitEditing={() => this.passwordInput.focus()}
+              keyboardType="email-address"
               autoCorrect={false}
               autoCapitalize={'none'}
               style={styles.input} />
@@ -29,15 +34,18 @@ export default class Login  extends Component {
           <TextInput
             underlineColorAndroid='transparent'
             placeholder='Password'
+            returnKeyType="go"
             placeholderTextColor='white'
             style={styles.input}
-            secureTextEntry={true} />
+            secureTextEntry={true}
+            ref={(input) => this.passwordInput = input} />
           </View>
           <TouchableOpacity style={styles.button}>
             <Text style={{ color: '#39c1ef', fontSize: 18 }}>Login</Text>
           </TouchableOpacity>
         
       </View>
+      
     );
   }
 }
