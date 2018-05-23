@@ -6,8 +6,7 @@ export default class MainMap extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>map</Text>
-       
+        <Text>map</Text>       
       </View>  
     );
   }

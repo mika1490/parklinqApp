@@ -44,7 +44,7 @@ export default class Login  extends Component {
         </View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => this.props.navigation.navigate('Home')}>
+          onPress={() => this.props.navigation.navigate('HomeScreen')}>
           <Text style={{ color: '#39c1ef', fontSize: 18 }}>Login</Text>
         </TouchableOpacity>
       </View>
