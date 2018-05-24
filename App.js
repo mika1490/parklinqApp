@@ -20,6 +20,9 @@ import Login from './app/screens/Login/Login';
 import Registration from './app/screens/Login/Registration';
 import MainMap from './app/screens/MainMap';
 import { DrawerNav, Tabs, LoginStackNav } from './app/config/router';
+//import HomeScreen from './src/screens/HomeScreenHomeScreen';
+// import HomeScreen from './src/HomeScreen/HomeScreen';
+// import JadeChat from './src/ChatScreen/JadeChat';
 
 
 const DismissKeyboard = ({ children }) =>( 
@@ -33,7 +36,7 @@ export default class App extends Component {
     return (
       <DismissKeyboard>
       <View style={styles.container}>
-         <LoginStackNav />
+        <LoginStackNav />
       </View>
       </DismissKeyboard>
     );

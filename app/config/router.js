@@ -13,35 +13,35 @@ import Terms from '../screens/Login/TermsConditions';
 import {Textarea} from 'native-base';
 import SellParkingPage from '../screens/SellParking/index';
 import HelpPage from '../screens/Help/index';
-import Tabs from './tabRoute';
-
+// import HomeScreenTabNavigator from './TabRoute';
+import DrawerNavigation from './DrawerNavigation';
 
 
 //INNER TAB NAVIGATOR
 
-const InnerStackNav = new StackNavigator({
-  Tabs: {
-    screen: Tabs,
-    navigationOptions: {
-      // header: null
-    }
-  }
-})
+// const InnerStackNav = new StackNavigator({
+//   HomeScreenTabNavigator: {
+//     screen: HomeScreenTabNavigator,
+//     navigationOptions: {
+//       header: null
+//     }
+//   }
+// })
 
-//DRAWER NAVIGATOR FOR HOME SCREEN
-const DrawerNav = new DrawerNavigator({
-  HomeScreen: {
-    screen: InnerStackNav
-  },
-  SellParkingPage: {
-    screen: SellParkingPage
-  },
-  HelpPage: {
-    screen: HelpPage
-  }
-}, {
-  drawerWidth: 300
-})
+// //DRAWER NAVIGATOR FOR HOME SCREEN
+// export const DrawerNav = new DrawerNavigator({
+//   Home: {
+//     screen: InnerStackNav
+//   },
+//   SellParkingPage: {
+//     screen: SellParkingPage
+//   },
+//   HelpPage: {
+//     screen: HelpPage
+//   }
+// }, {
+//   drawerWidth: 300
+// })
 
 //STACK NAVIGATOR FOR LOGIN TO HOME
 export const LoginStackNav = new StackNavigator({
@@ -70,7 +70,7 @@ export const LoginStackNav = new StackNavigator({
     }
   },
   HomeScreen: {
-    screen: DrawerNav,
+    screen: DrawerNavigation,
     navigationOptions: {
       header: null
     }
