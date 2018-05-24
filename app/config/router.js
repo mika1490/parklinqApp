@@ -13,59 +13,9 @@ import Terms from '../screens/Login/TermsConditions';
 import {Textarea} from 'native-base';
 import SellParkingPage from '../screens/SellParking/index';
 import HelpPage from '../screens/Help/index';
+import Tabs from './tabRoute';
 
 
-// TAB NAVIGATOR
-class TabNav extends Component {
-
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerLeft: (
-        <View style={{ padding: 10, flex: 1 }}>
-          <Ionicons name="md-menu" onPress={() => navigation.navigate('DrawerOpen')} />
-          <Button title="open says me" />
-        </View>
-      )
-    }
-  }
-  render() {
-    return(
-      <Tabs />
-    )
-  }
-}
-
- const Tabs = new TabNavigator({
-  MainMap: {
-    screen: MainMap,
-    navigationOptions: {
-      tabBarLabel: 'HOME',
-      tabBarIcon: ({focused, tintColor }) => (
-        <Ionicons name="md-compass" size={24} />
-      ) 
-    }
-  },
-  Account: {
-    screen: Account,
-    navigationOptions: {
-      tabBarLabel: 'ACCOUNT',
-      tabBarIcon: () => (
-        <Ionicons name="contact" size={24} />
-      ) 
-    }
-  },
-  PassesPage: {
-    screen: PassesPage,
-    navigationOptions: {
-      tabBarLabel: 'PASSES',
-      tabBarIcon: () => (
-        <Ionicons name="md-compass" size={24} />
-      ) 
-    }
-  },
-},{
-  tabBarPosition: 'bottom'
-});
 
 //INNER TAB NAVIGATOR
 
@@ -73,7 +23,7 @@ const InnerStackNav = new StackNavigator({
   Tabs: {
     screen: Tabs,
     navigationOptions: {
-      header: null
+      // header: null
     }
   }
 })
